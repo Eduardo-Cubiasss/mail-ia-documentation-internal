@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI Email Platform — Arquitectura, Reglas de Ingeniería de Software (rules.md) y Dossier Estratégico para Socios.">
+    <title>AI Email Platform — Arquitectura, Reglas de Desarrollo (rules.md) & Dossier</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Executive Topbar Navigation (Without numbers) -->
+    <header class="executive-header" id="header">
+        <div class="header-container">
+            <div class="brand-badge">
+                <span class="brand-logo-mark"></span>
+                <div class="brand-text">
+                    <span class="brand-name">MAIL-IA</span>
+                    <span class="brand-subtitle">REGLAS & ARQUITECTURA (RULES.MD)</span>
+                </div>
+            </div>
+
+            <!-- Proposed Menu Navigation (Clean without numbers) -->
+            <nav class="nav-menu" id="nav-menu">
+                <a href="#vision" class="nav-link active">Visión & Problema</a>
+                <a href="#modulos" class="nav-link">Módulos & UI Mockup</a>
+                <a href="#stack" class="nav-link">Stack Tecnológico</a>
+                <a href="#presupuesto" class="nav-link">Presupuesto</a>
+                <a href="#cronograma" class="nav-link">Cronograma</a>
+                <a href="#precios" class="nav-link">Suscripciones & Precios</a>
+                <a href="#resumen" class="nav-link">Oportunidad</a>
+            </nav>
+
+            <div class="header-actions">
+                <button class="btn btn-secondary btn-sm" id="btn-markdown" title="Descargar archivo rules.md">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    Descargar rules.md
+                </button>
+                <a href="#resumen" class="btn btn-primary btn-sm">Resumen Ejecutivo</a>
+                <button class="mobile-toggle" id="mobile-toggle" aria-label="Abrir menú">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Executive Section -->
+        <section class="hero-section">
+            <div class="container">
+                <div class="hero-tag">
+                    <span class="tag-status">Especificación Oficial</span>
+                    <span class="tag-divider">•</span>
+                    <span>Reglas de Arquitectura & Desarrollo de Software (rules.md)</span>
+                </div>
+
+                <h1 class="hero-title">
+                    AI Email Platform — Arquitectura, Reglas de Desarrollo & Dossier Estratégico
+                </h1>
+                <p class="hero-description">
+                    Especificación técnica integral y propuesta de valor basada en <code>rules.md</code>: Clean Architecture y DDD en NestJS, frontend tipado en Angular, despacho asíncrono desacoplado con workers y modelo de negocio con alto margen.
+                </p>
+
+                <!-- High-level KPI summary cards -->
+                <div class="hero-stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-label">Mercado Objetivo</span>
+                        <span class="stat-value">B2B SaaS</span>
+                        <span class="stat-note">Equipos de Marketing & Pymes</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-label">Coste Operativo</span>
+                        <span class="stat-value">$6 – $55 USD</span>
+                        <span class="stat-note">Infraestructura Serverless / mes</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-label">Estándar de Código</span>
+                        <span class="stat-value">DDD / TDD</span>
+                        <span class="stat-note">Complejidad ciclomática &le; 4</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-label">Margen Bruto Proyectado</span>
+                        <span class="stat-value">> 85%</span>
+                        <span class="stat-note">Suscripciones recurrentes</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN: VISIÓN & PROBLEMA (Diseñada según @.idea/agent.md) -->
+        <section class="section-block" id="vision">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-kicker">VISIÓN ESTRATÉGICA & MERCADO</span>
+                    <h2 class="section-title">¿Qué problema resolvemos y cuál es nuestra propuesta de valor?</h2>
+                    <p class="section-subtitle">
+                        Eliminamos el cuello de botella técnico entre marketing y desarrollo, permitiendo crear, maquetar y despachar campañas de correo de alto impacto con solo conversar con una IA.
+                    </p>
+                </div>
+
+                <div class="grid-2col">
+                    <!-- The Problem -->
+                    <div class="card">
+                        <div class="card-pill tag-red">El Problema Actual</div>
+                        <h3 class="card-heading">Dependencia técnica y lentitud en la creación de campañas</h3>
+                        <p class="card-lead">
+                            Cuando los departamentos de marketing conciben una campaña, deben pasar obligatoriamente por un proceso intermedio de desarrolladores creando plantillas HTML y configurando automatizaciones.
+                        </p>
+                        
+                        <ul class="feature-list">
+                            <li>
+                                <div class="list-bullet">✕</div>
+                                <div>
+                                    <strong>Procesos tardados e inexactos:</strong> La iteración entre marketing e ingeniería toma días y no siempre refleja fielmente la visión creativa original.
+                                </div>
+                            </li>
+                            <li>
+                                <div class="list-bullet">✕</div>
+                                <div>
+                                    <strong>Falta de acceso directo a las plantillas:</strong> Marketing carece de autonomía para ajustar textos, imágenes o formatos sin solicitar cambios de código.
+                                </div>
+                            </li>
+                            <li>
+                                <div class="list-bullet">✕</div>
+                                <div>
+                                    <strong>Riesgo de spam y baja entregabilidad:</strong> Complejidad en la configuración de certificados y estándares de correo requeridos para llegar a la bandeja principal.
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- The Solution -->
+                    <div class="card card-accented">
+                        <div class="card-pill tag-indigo">Nuestra Solución</div>
+                        <h3 class="card-heading">Capa de Inteligencia Artificial que abstrae y genera plantillas en segundos</h3>
+                        <p class="card-lead">
+                            Software especializado e independiente que traduce los requerimientos de la campaña en lenguaje natural directamente a plantillas HTML optimizadas y listas para despacho.
+                        </p>
+
+                        <ul class="feature-list">
+                            <li>
+                                <div class="list-bullet bullet-check">✓</div>
+                                <div>
+                                    <strong>Abstracción Conversacional:</strong> El usuario solo describe su objetivo en un chat y la IA diseña la estructura, copia y estilo visual de la plantilla.
+                                </div>
+                            </li>
+                            <li>
+                                <div class="list-bullet bullet-check">✓</div>
+                                <div>
+                                    <strong>Envíos Certificados Anti-Spam:</strong> Infraestructura con estándares y certificados especiales que garantizan alta entregabilidad y priorizan la atención del cliente.
+                                </div>
+                            </li>
+                            <li>
+                                <div class="list-bullet bullet-check">✓</div>
+                                <div>
+                                    <strong>Aislamiento Seguro del Software del Negocio:</strong> Plataforma desacoplada que opera con solo la información necesaria, protegiendo los sistemas centrales de la empresa.
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Strategic Pillars from agent.md -->
+                <div class="pillars-container">
+                    <h4 class="pillars-title">Pilares Estratégicos del Proyecto</h4>
+                    <div class="grid-3col">
+                        <div class="pillar-box">
+                            <div class="pillar-icon-badge">💬</div>
+                            <h5>Facilidad de Adopción Conversacional</h5>
+                            <p>Interacción fluida inspirada en interfaces tipo Claude. El usuario conversa con la IA, quien asiste y construye la plantilla en tiempo real sin curva de aprendizaje técnica.</p>
+                        </div>
+                        <div class="pillar-box">
+                            <div class="pillar-icon-badge">🎨</div>
+                            <h5>Autonomía & Reutilización de Diseños</h5>
+                            <p>Libertad para reutilizar plantillas pasadas, insertar imágenes corporativas, indexar formatos de diseño y convertir automáticamente el contenido en HTML listo para API.</p>
+                        </div>
+                        <div class="pillar-box">
+                            <div class="pillar-icon-badge">🔐</div>
+                            <h5>Infraestructura & Control Aislado</h5>
+                            <p>Adopción y autogestión de cuentas de correo preexistentes con despacho de datos digeribles, segmentación por categorías y seguimiento analítico detallado.</p>
+                        </div>
+                    </div>
+
+                    <!-- Core Functionalities Grid from agent.md -->
+                    <div class="capabilities-grid-box">
+                        <div class="cap-box-heading">
+                            <span>Capacidades Fundamentales de la Plataforma</span>
+                        </div>
+                        <div class="cap-items-grid">
+                            <div class="cap-item-card">
+                                <span class="cap-item-dot"></span>
+                                <div class="cap-item-text">
+                                    <strong>Creación de campañas vía chat asistido por IA:</strong>
+                                    Diseño visual interactivo donde la IA convierte la conversación en código HTML limpio y estructurado.
+                                </div>
+                            </div>
+                            <div class="cap-item-card">
+                                <span class="cap-item-dot"></span>
+                                <div class="cap-item-text">
+                                    <strong>Gestión y control de listas y categorías de clientes:</strong>
+                                    Segmentación precisa de audiencias con almacenamiento aislado y estricta privacidad de datos.
+                                </div>
+                            </div>
+                            <div class="cap-item-card">
+                                <span class="cap-item-dot"></span>
+                                <div class="cap-item-text">
+                                    <strong>Despacho y entrega con datos digeribles:</strong>
+                                    Envío confiable con cabeceras verificadas, tasas de rebote mínimas y reportes ejecutivos claros.
+                                </div>
+                            </div>
+                            <div class="cap-item-card">
+                                <span class="cap-item-dot"></span>
+                                <div class="cap-item-text">
+                                    <strong>Seguimiento y telemetría de campañas:</strong>
+                                    Métricas en tiempo real de tasa de apertura, clics, conversiones y efectividad de cada plantilla.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN: MÓDULOS & UI MOCKUP (Diseñada según @.idea/agent.md) -->
+        <section class="section-block section-alt" id="modulos">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-kicker">ARQUITECTURA DE PRODUCTO & INTERFAZ</span>
+                    <h2 class="section-title">Especificación de Pantallas & Simulación de Interfaz</h2>
+                    <p class="section-subtitle">
+                        Diseño inspirado en la experiencia conversacional limpia y minimalista de interfaces tipo Claude. Explora los bloques modulares que conformarán la aplicación final para socios y usuarios.
+                    </p>
+                </div>
+
+                <!-- Interactive Module Selector / Tabs -->
+                <div class="module-tabs-nav" id="module-tabs">
+                    <button class="module-tab-btn active" data-module="campaigns">
+                        <span class="tab-badge">Módulo Principal</span>
+                        <span class="tab-title">Campañas & Historial</span>
+                    </button>
+                    <button class="module-tab-btn" data-module="dashboard">
+                        <span class="tab-badge">Panel General</span>
+                        <span class="tab-title">Dashboard / Inicio</span>
+                    </button>
+                    <button class="module-tab-btn" data-module="templates">
+                        <span class="tab-badge">Biblioteca</span>
+                        <span class="tab-title">Selector de Plantillas</span>
+                    </button>
+                    <button class="module-tab-btn" data-module="sending">
+                        <span class="tab-badge">Despacho</span>
+                        <span class="tab-title">Configuración de Envío</span>
+                    </button>
+                    <button class="module-tab-btn" data-module="contacts">
+                        <span class="tab-badge">Audiencias</span>
+                        <span class="tab-title">Clientes & Categorías</span>
+                    </button>
+                    <button class="module-tab-btn" data-module="analytics">
+                        <span class="tab-badge">Telemetría</span>
+                        <span class="tab-title">Seguimiento de Campañas</span>
+                    </button>
+                    <button class="module-tab-btn" data-module="settings">
+                        <span class="tab-badge">Ajustes</span>
+                        <span class="tab-title">Configuración & API</span>
+                    </button>
+                    <button class="module-tab-btn" data-module="login">
+                        <span class="tab-badge">Acceso</span>
+                        <span class="tab-title">Login / Onboarding</span>
+                    </button>
+                </div>
+
+                <!-- Dynamic Workspace: Description + Wireframe Simulator -->
+                <div class="simulator-wrapper">
+                    <!-- Left Column: Module Description & Capabilities -->
+                    <div class="module-info-panel" id="module-info-panel">
+                        <div class="info-badge">Pantalla Seleccionada</div>
+                        <h3 class="info-title" id="info-title">Campañas (Historial & Creación Asistida)</h3>
+                        <p class="info-description" id="info-description">
+                            Gestión centralizada del historial de campañas de la empresa con filtros por estado, métricas de rendimiento y acceso directo al flujo de creación de nuevas campañas asistidas por IA.
+                        </p>
+
+                        <div class="info-capabilities">
+                            <h4 class="capabilities-heading">¿Qué podrá realizar el usuario aquí?</h4>
+                            <ul class="capabilities-list" id="capabilities-list">
+                                <li><strong>Historial completo de campañas:</strong> Registro auditable con filtros por Enviadas, Programadas y Borradores.</li>
+                                <li><strong>Creación conversacional con IA:</strong> Botón destacado que despliega el chat generativo para maquetar nuevas plantillas.</li>
+                                <li><strong>Métricas resumidas en lista:</strong> Tasa de apertura y clics visible directamente en cada fila de campaña.</li>
+                                <li><strong>Acciones rápidas:</strong> Duplicar campañas exitosas, editar borradores o reanudar envíos programados.</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-status-box">
+                            <span class="status-indicator"></span>
+                            <span><strong>Estado de Especificación:</strong> Definición visual completa en dossier interno.</span>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Visual Simulated GUI Layout -->
+                    <div class="simulator-display-container">
+                        <!-- Simulated Window Frame -->
+                        <div class="mockup-window">
+                            <!-- Window Bar -->
+                            <div class="mockup-header-bar">
+                                <div class="window-controls">
+                                    <span class="dot dot-red"></span>
+                                    <span class="dot dot-yellow"></span>
+                                    <span class="dot dot-green"></span>
+                                </div>
+                                <div class="window-address-bar">
+                                    <span class="lock-icon">🔒</span>
+                                    <span class="url-text" id="mockup-url">app.mail-ia.com/campaigns</span>
+                                </div>
+                                <div class="window-badge-tag">Simulación de Interfaz</div>
+                            </div>
+
+                            <!-- Screen Inner Workspace -->
+                            <div class="mockup-screen" id="mockup-screen">
+                                <div class="app-shell" id="app-shell-container">
+                                    <!-- App Sidebar (Clean SVG Line Icons, No Emojis) -->
+                                    <aside class="app-sidebar" id="app-sidebar-container">
+                                        <div class="app-brand-mini">
+                                            <div class="mini-logo"></div>
+                                            <span>Mail-IA</span>
+                                        </div>
+                                        <div class="app-nav-group">
+                                            <div class="sidebar-item" id="sb-dashboard">
+                                                <div class="sb-left">
+                                                    <svg class="sb-svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                                                    <span>Inicio</span>
+                                                </div>
+                                            </div>
+                                            <div class="sidebar-item active" id="sb-campaigns">
+                                                <div class="sb-left">
+                                                    <svg class="sb-svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke-width="2"><polygon points="12 2 19 21 12 17 5 21 12 2"/></svg>
+                                                    <span>Campañas</span>
+                                                </div>
+                                            </div>
+                                            <div class="sidebar-item" id="sb-templates">
+                                                <div class="sb-left">
+                                                    <svg class="sb-svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                                                    <span>Plantillas</span>
+                                                </div>
+                                            </div>
+                                            <div class="sidebar-item" id="sb-contacts">
+                                                <div class="sb-left">
+                                                    <svg class="sb-svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                                                    <span>Clientes</span>
+                                                </div>
+                                            </div>
+                                            <div class="sidebar-item" id="sb-analytics">
+                                                <div class="sb-left">
+                                                    <svg class="sb-svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                                                    <span>Seguimiento</span>
+                                                </div>
+                                            </div>
+                                            <div class="sidebar-item" id="sb-settings">
+                                                <div class="sb-left">
+                                                    <svg class="sb-svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                                                    <span>Configuración</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="sidebar-footer">
+                                            <div class="user-pill-mini">
+                                                <div class="user-avatar">SC</div>
+                                                <div class="user-meta">
+                                                    <span>Socio Demo</span>
+                                                    <small>Plan Pro</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </aside>
+
+                                    <!-- Main Simulated Content Canvas -->
+                                    <div class="app-content" id="app-dynamic-view"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Design System & Screen Inventory Grid -->
+                <div class="pillars-container" style="margin-top: 3.5rem;">
+                    <h4 class="pillars-title">Inventario de Pantallas & Sistema de Diseño (Tipo Claude)</h4>
+                    <div class="grid-3col">
+                        <div class="pillar-box">
+                            <div class="pillar-icon-badge">🎨</div>
+                            <h5>Paleta & Estilo Visual</h5>
+                            <p>Base 60% Azul Noche (#0B1120), Superficie Secundaria (#131B2E), Blanco (#FFFFFF), Gris (#8A93A6 y #1E2536) y Acento Índigo (#5B7CFA) aplicado con moderación.</p>
+                        </div>
+                        <div class="pillar-box">
+                            <div class="pillar-icon-badge">📐</div>
+                            <h5>Estructura & Componentes</h5>
+                            <p>Layout en 2 columnas: sidebar fija a la izquierda y área principal amplia con mucho whitespace, bordes suaves (radius 12-16px) e iconografía lineal sutil.</p>
+                        </div>
+                        <div class="pillar-box">
+                            <div class="pillar-icon-badge">✨</div>
+                            <h5>Experiencia Conversacional</h5>
+                            <p>Burbujas espaciadas sin ruido visual, foco absoluto en el contenido del mensaje y vista previa reactiva en tiempo real para máxima productividad.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN: STACK TECNOLÓGICO (Diseñada según @.idea/agent.md) -->
+        <section class="section-block section-alt" id="stack">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-kicker">INGENIERÍA & ARQUITECTURA DE SOFTWARE</span>
+                    <h2 class="section-title">Stack Tecnológico & Fundamentos de Desarrollo</h2>
+                    <p class="section-subtitle">
+                        Arquitectura desacoplada, tipado estricto de punta a punta y estándares de ingeniería diseñados para máxima estabilidad, modularidad y escalabilidad técnica.
+                    </p>
+                </div>
+
+                <div class="grid-3col">
+                    <!-- Backend Card -->
+                    <div class="stack-card">
+                        <div class="stack-icon-wrap">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                        </div>
+                        <span class="stack-tech-badge">Backend & APIs</span>
+                        <h3>NestJS & TypeScript</h3>
+                        <p>Arquitectura guiada por el dominio (<strong>DDD</strong>), desarrollo guiado por pruebas (<strong>TDD</strong>) y <strong>Clean Architecture</strong>. Estructura modular sólida, controladores limpios y capas desacopladas para garantizar máxima fiabilidad y cero deuda técnica.</p>
+                        <div class="stack-tag-list">
+                            <span>TypeScript</span>
+                            <span>Clean Architecture</span>
+                            <span>DDD & TDD</span>
+                            <span>Inyección de Dependencias</span>
+                        </div>
+                    </div>
+
+                    <!-- Frontend Card -->
+                    <div class="stack-card">
+                        <div class="stack-icon-wrap">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+                        </div>
+                        <span class="stack-tech-badge">Frontend Web</span>
+                        <h3>Angular & TypeScript</h3>
+                        <p>Al ser un framework fuertemente estructurado y tipado, <strong>obliga desde el primer día a separar de forma estricta la interfaz visual de la lógica de negocio</strong>, facilitando el mantenimiento y garantizando un rendimiento óptimo.</p>
+                        <div class="stack-tag-list">
+                            <span>Angular</span>
+                            <span>TypeScript Estricto</span>
+                            <span>Arquitectura Modular</span>
+                            <span>Separación UI / Lógica</span>
+                        </div>
+                    </div>
+
+                    <!-- Infraestructura Card -->
+                    <div class="stack-card">
+                        <div class="stack-icon-wrap">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                        </div>
+                        <span class="stack-tech-badge">Infraestructura & DevOps</span>
+                        <h3>Docker & Repositorios Aislados</h3>
+                        <p>Repositorios independientes y <strong>contenedores Docker separados para cada proyecto</strong> y micro-servicio. Garantiza entornos 100% reproducibles, despliegues continuos atómicos y desacoplamiento total.</p>
+                        <div class="stack-tag-list">
+                            <span>Docker Containers</span>
+                            <span>Micro-servicios</span>
+                            <span>Repositorios Aislados</span>
+                            <span>CI/CD Desacoplado</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN: PRESUPUESTO & PLAN FINANCIERO (Diseñada según @.idea/agent.md) -->
+        <section class="section-block" id="presupuesto">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-kicker">ESTRUCTURA DE COSTES & INFRAESTRUCTURA</span>
+                    <h2 class="section-title">Presupuesto & Plan Financiero</h2>
+                    <p class="section-subtitle">
+                        Arquitectura de costes mensual optimizada. Un entorno de producción profesional completo por solo <strong>$6.00 – $55.00 USD / mes</strong>, eliminando costes fijos innecesarios y maximizando el margen bruto para los socios.
+                    </p>
+                </div>
+
+                <!-- High-level Cost Summary Cards -->
+                <div class="budget-summary-grid">
+                    <div class="budget-card">
+                        <div class="budget-category">Coste Operativo Total</div>
+                        <div class="budget-amount" style="color: #10B981;">$6 – $55</div>
+                        <div class="budget-percentage">USD / mes (Stack Completo)</div>
+                        <p class="budget-desc">Entorno de producción robusto por el coste equivalente a dos suscripciones básicas de software.</p>
+                        <div class="budget-tags">
+                            <span>Coste Fijo Mínimo</span>
+                            <span>Serverless</span>
+                        </div>
+                    </div>
+
+                    <div class="budget-card">
+                        <div class="budget-category">Inferencia de IA</div>
+                        <div class="budget-amount">$1.00 – $3.00</div>
+                        <div class="budget-percentage">USD / mes (Groq / OpenRouter)</div>
+                        <p class="budget-desc">Modelos abiertos (Qwen 2.5 / Llama 3.1) sin la tasa premium ni sobreprecio de marcas cerradas.</p>
+                        <div class="budget-tags">
+                            <span>Alta Velocidad</span>
+                            <span>Céntimos / M Tokens</span>
+                        </div>
+                    </div>
+
+                    <div class="budget-card">
+                        <div class="budget-category">Entregabilidad de Email</div>
+                        <div class="budget-amount">$0.00 – $20.00</div>
+                        <div class="budget-percentage">USD / mes (Resend / Postmark)</div>
+                        <p class="budget-desc">Desde 3,000 correos gratis hasta 50,000 envíos certificados con SPF, DKIM y DMARC garantizados.</p>
+                        <div class="budget-tags">
+                            <span>Anti-Spam</span>
+                            <span>Escalable a 50k</span>
+                        </div>
+                    </div>
+
+                    <div class="budget-card">
+                        <div class="budget-category">Frontend & Assets</div>
+                        <div class="budget-amount">$0.00 – $2.00</div>
+                        <div class="budget-percentage">USD / mes (Cloudflare Pages + R2)</div>
+                        <p class="budget-desc">Alojamiento global CDN ilimitado y almacenamiento de imágenes sin costes por salida de datos.</p>
+                        <div class="budget-tags">
+                            <span>Zero Egress</span>
+                            <span>CDN Global</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Technological Budget Table from agent.md -->
+                <div class="financial-table-box">
+                    <h4 class="table-box-title">Desglose Detallado del Stack Tecnológico & Justificación de Elección</h4>
+                    <div class="table-responsive">
+                        <table class="executive-table">
+                            <thead>
+                                <tr>
+                                    <th style="width: 22%;">Apartado Tecnológico</th>
+                                    <th style="width: 24%;">Herramienta Seleccionada</th>
+                                    <th style="width: 18%;">Coste Mensual Estimado</th>
+                                    <th style="width: 36%;">Justificación de la Elección</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>1. Backend y Workers (Docker)</strong></td>
+                                    <td><span class="tool-badge">Railway (Plan Hobby) o Fly.io</span></td>
+                                    <td><span class="cost-badge">$5.00 – $15.00 USD</span></td>
+                                    <td>Despliegue directo del contenedor Docker. Solo pagas por la CPU/RAM que consumen tus procesos y workers al ejecutarse, evitando el coste de un VPS 24/7 inactivo.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>2. Base de Datos (PostgreSQL)</strong></td>
+                                    <td><span class="tool-badge">Neon Postgres</span></td>
+                                    <td><span class="cost-badge">$0.00 – $15.00 USD</span></td>
+                                    <td>Entorno serverless para base de datos relacional. El plan gratuito inicial cubre de sobra el almacenamiento de usuarios, campañas y plantillas para el MVP. Escala a cero si no hay tráfico.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>3. Entregabilidad de Email</strong></td>
+                                    <td><span class="tool-badge">Resend (o Postmark)</span></td>
+                                    <td><span class="cost-badge">$0.00 – $20.00 USD</span></td>
+                                    <td>Resend ofrece 3,000 correos gratis al mes con una API moderna y excelente manejo de SPF/DKIM/DMARC. El primer escalón de pago ($20) cubre hasta 50,000 envíos.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>4. Inteligencia Artificial (JSON/HTML)</strong></td>
+                                    <td><span class="tool-badge">Qwen 2.5 Coder / Llama 3.1 (Groq / OpenRouter)</span></td>
+                                    <td><span class="cost-badge">$1.00 – $3.00 USD</span></td>
+                                    <td>Elimina el sobreprecio de las marcas comerciales. Inferencia ultrarrápida y costes marginales (céntimos por millón de tokens). Ideal para estructurar respuestas sin pagar la "tasa premium" de GPT o Claude.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>5. Frontend Web</strong></td>
+                                    <td><span class="tool-badge">Cloudflare Pages</span></td>
+                                    <td><span class="cost-badge" style="color: #10B981;">$0.00 USD (Gratis)</span></td>
+                                    <td>Ancho de banda ilimitado y gratuito para alojar la interfaz del dashboard y el chat de cliente con CDN de latencia ultrabaja.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>6. Almacenamiento de Imágenes</strong></td>
+                                    <td><span class="tool-badge">Cloudflare R2</span></td>
+                                    <td><span class="cost-badge">$0.00 – $2.00 USD</span></td>
+                                    <td>Sin costes de salida de datos (egress fees), ideal para guardar los recursos gráficos e imágenes de las plantillas de correo.</td>
+                                </tr>
+                                <tr class="total-highlight-row">
+                                    <td><strong>TOTAL ESTIMADO</strong></td>
+                                    <td><span class="tool-badge" style="background: rgba(16,185,129,0.15); color: #6EE7B7; border-color: rgba(16,185,129,0.3);">Stack de Producción Completo</span></td>
+                                    <td><span class="cost-badge">$6.00 – $55.00 USD / mes</span></td>
+                                    <td><strong>Un entorno de producción profesional completo por el coste de un par de suscripciones de software.</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Strategic Takeaway Pillars for Partners -->
+                <div class="pillars-container" style="margin-top: 2.5rem;">
+                    <h4 class="pillars-title">Ventajas Financieras Clave para los Socios</h4>
+                    <div class="grid-3col">
+                        <div class="pillar-box">
+                            <div class="pillar-icon-badge">⚡</div>
+                            <h5>Cero Capacidad Ociosa (Escala a Cero)</h5>
+                            <p>Toda la infraestructura (Neon, Cloudflare, Railway) opera bajo demanda. Si la plataforma no tiene tráfico en momentos valle, el gasto cae a casi $0.</p>
+                        </div>
+                        <div class="pillar-box">
+                            <div class="pillar-icon-badge">🧠</div>
+                            <h5>Sin Tasa Premium de IA Comercial</h5>
+                            <p>Al utilizar modelos abiertos optimizados en Groq/OpenRouter, el coste por plantilla generada es de fracciones de céntimo, blindando el margen bruto.</p>
+                        </div>
+                        <div class="pillar-box">
+                            <div class="pillar-icon-badge">📈</div>
+                            <h5>Margen Neto Inmediato por Cliente</h5>
+                            <p>Con planes SaaS desde $24 a $72 USD/mes y un coste de servidor total de $6 a $55 USD, la rentabilidad neta se alcanza prácticamente desde el cliente número 1.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN: CRONOGRAMA & ROADMAP ESTIMADO (2 MESES / 60 DÍAS) -->
+        <section class="section-block section-alt" id="cronograma">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-kicker">PLAN DE EJECUCIÓN ESTIMADO (60 DÍAS / 2 MESES)</span>
+                    <h2 class="section-title">Cronograma de Entregas & Roadmap por Pantallas</h2>
+                    <p class="section-subtitle">
+                        Planificación de desarrollo iniciando hoy, <strong>15 de Agosto de 2026</strong>, con entregas progresivas de software cada 15 días orientadas por pantallas funcionales e hitos de arquitectura.
+                    </p>
+                </div>
+
+                <!-- Timeline Roadmap Grid (60 Days / 2 Months - Screen Oriented) -->
+                <div class="timeline-container">
+                    
+                    <!-- Hito 1: 25% (15 Días - 30 Agosto) -->
+                    <div class="timeline-card">
+                        <div class="timeline-header">
+                            <span class="phase-badge">15 Días (30 Ago)</span>
+                            <span class="pct-badge">25%</span>
+                        </div>
+                        <div class="timeline-progress-bar-wrap">
+                            <div class="timeline-progress-fill" style="width: 25%;"></div>
+                        </div>
+                        
+                        <div class="screen-badge-list">
+                            <span class="screen-tag">Chat de Creación IA</span>
+                            <span class="screen-tag">Clientes & Categorías</span>
+                        </div>
+
+                        <h3 class="timeline-title">Chat IA & Gestión de Clientes</h3>
+                        <p class="timeline-desc">Construcción del núcleo conversacional de IA y el repositorio seguro de datos de clientes y audiencias.</p>
+                        
+                        <div class="deliverables-box">
+                            <span class="deliv-label">Entregables funcionales:</span>
+                            <ul>
+                                <li><strong>Pantalla Chat IA (Insignia):</strong> Conversación guiada, chips de ajuste rápido y renderizado previo de email.</li>
+                                <li><strong>Pantalla Clientes & Categorías:</strong> CRUD completo de contactos, importación CSV y segmentación de audiencias.</li>
+                                <li>Conexión con motor IA (Groq/OpenRouter) y esquema en Neon PostgreSQL.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Hito 2: 50% (30 Días / 1 Mes - 15 Septiembre) -->
+                    <div class="timeline-card">
+                        <div class="timeline-header">
+                            <span class="phase-badge">30 Días (15 Sep)</span>
+                            <span class="pct-badge">50%</span>
+                        </div>
+                        <div class="timeline-progress-bar-wrap">
+                            <div class="timeline-progress-fill" style="width: 50%;"></div>
+                        </div>
+
+                        <div class="screen-badge-list">
+                            <span class="screen-tag">Dashboard / Inicio</span>
+                            <span class="screen-tag">Selector Plantillas</span>
+                            <span class="screen-tag">Login / SSO</span>
+                        </div>
+
+                        <h3 class="timeline-title">Dashboard, Plantillas & Login</h3>
+                        <p class="timeline-desc">Habilitación del panel central de mando, catálogo de diseños renderizados y sistema de autenticación de usuarios.</p>
+                        
+                        <div class="deliverables-box">
+                            <span class="deliv-label">Entregables funcionales:</span>
+                            <ul>
+                                <li><strong>Pantalla Dashboard:</strong> 4 Tarjetas de KPIs cuantitativos, gráficos de interacción y actividad reciente.</li>
+                                <li><strong>Pantalla Selector de Plantillas:</strong> Catálogo visual de diseños simulados y subida de archivos propios.</li>
+                                <li><strong>Pantalla Login:</strong> Autenticación sin menús distractores y soporte SSO (Google/Microsoft).</li>
+                                <li>Almacenamiento de recursos e imágenes en Cloudflare R2.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Hito 3: 75% (45 Días - 30 Septiembre) -->
+                    <div class="timeline-card">
+                        <div class="timeline-header">
+                            <span class="phase-badge">45 Días (30 Sep)</span>
+                            <span class="pct-badge">75%</span>
+                        </div>
+                        <div class="timeline-progress-bar-wrap">
+                            <div class="timeline-progress-fill" style="width: 75%;"></div>
+                        </div>
+
+                        <div class="screen-badge-list">
+                            <span class="screen-tag">Config. de Envío</span>
+                            <span class="screen-tag">Ajustes & API</span>
+                            <span class="screen-tag">Workers BullMQ</span>
+                        </div>
+
+                        <h3 class="timeline-title">Despacho Asíncrono & Ajustes</h3>
+                        <p class="timeline-desc">Flujo de programación de envíos masivos desacoplados y configuración de credenciales de correo seguras.</p>
+                        
+                        <div class="deliverables-box">
+                            <span class="deliv-label">Entregables funcionales:</span>
+                            <ul>
+                                <li><strong>Pantalla Configuración de Envío:</strong> Stepper interactivo, selección de listas, programación horaria y resumen sticky.</li>
+                                <li><strong>Pantalla Ajustes & API:</strong> Gestión de API keys y verificación de dominios con DKIM, SPF y DMARC.</li>
+                                <li>Colas de procesos en BullMQ y workers en contenedores Docker para despacho sin bloqueo de API.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Hito 4: 100% (60 Días / 2 Meses - 15 Octubre) -->
+                    <div class="timeline-card">
+                        <div class="timeline-header">
+                            <span class="phase-badge">60 Días (15 Oct)</span>
+                            <span class="pct-badge" style="color: #6EE7B7;">100%</span>
+                        </div>
+                        <div class="timeline-progress-bar-wrap">
+                            <div class="timeline-progress-fill" style="width: 100%; background: #10B981;"></div>
+                        </div>
+
+                        <div class="screen-badge-list">
+                            <span class="screen-tag">Telemetría / Métricas</span>
+                            <span class="screen-tag">Historial Campañas</span>
+                            <span class="screen-tag">Beta Privada</span>
+                        </div>
+
+                        <h3 class="timeline-title">Telemetría & Salida a Producción</h3>
+                        <p class="timeline-desc">Monitoreo de rendimiento en vivo, historial completo de envíos y despliegue del MVP con empresas piloto.</p>
+                        
+                        <div class="deliverables-box">
+                            <span class="deliv-label">Entregables funcionales:</span>
+                            <ul>
+                                <li><strong>Pantalla Seguimiento de Campañas:</strong> Tasa de aperturas, clics, rebotes, mapa de calor y exportación de reportes.</li>
+                                <li><strong>Pantalla Campañas (Historial):</strong> Registro auditable de campañas enviadas/programadas y botón de duplicar.</li>
+                                <li>Despliegue en producción sobre Cloudflare Pages y Railway/Fly.io.</li>
+                                <li>Inicio de Beta Privada con 15 empresas piloto y cobro de suscripciones.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN: PRECIOS & MONETIZACIÓN (Diseñada según @.idea/agent.md) -->
+        <section class="section-block" id="precios">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-kicker">MODELO DE MONETIZACIÓN & ESCALABILIDAD</span>
+                    <h2 class="section-title">Planes de Suscripción & Proyección Financiera</h2>
+                    <p class="section-subtitle">
+                        Estructura comercial calibrada frente al mercado. Nuestra ventaja de coste de infraestructura ($6 – $55 USD/mes) nos permite fijar precios altamente competitivos con márgenes brutos superiores al 85%.
+                    </p>
+                </div>
+
+                <!-- Market Benchmarking Comparison Box -->
+                <div class="benchmark-box">
+                    <div class="benchmark-header">
+                        <div>
+                            <h3 class="benchmark-title">Referencia de Mercado vs. Ventaja Estructural Mail-IA</h3>
+                            <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.2rem;">Con 10,000 contactos, el rango de mercado oscila entre $25 y $375 USD / mes.</p>
+                        </div>
+                        <span class="benchmark-badge">Coste de Infra: $6 – $55 USD/mes</span>
+                    </div>
+                    <div class="benchmark-grid">
+                        <div class="bench-item">
+                            <div class="bench-brand">Brevo (Sendinblue)</div>
+                            <div class="bench-price">$9 – $65 USD/mes</div>
+                            <div class="bench-notes">Starter $9–$25 (5K–100K envíos), Business $18–$65/mes. Sin generación profunda por IA.</div>
+                        </div>
+                        <div class="bench-item">
+                            <div class="bench-brand">ActiveCampaign</div>
+                            <div class="bench-price">$29 – $99+ USD/mes</div>
+                            <div class="bench-notes">Desde $29 (1,000 contactos) hasta $375/mes en Pro anual para 10,000 contactos.</div>
+                        </div>
+                        <div class="bench-item">
+                            <div class="bench-brand">Mailchimp</div>
+                            <div class="bench-price">~$100 USD/mes</div>
+                            <div class="bench-notes">Cobro estricto por contacto. Editor tradicional de plantillas con fricción técnica.</div>
+                        </div>
+                        <div class="bench-item our-edge">
+                            <div class="bench-brand" style="color: #10B981;">MAIL-IA (Nuestra Oferta)</div>
+                            <div class="bench-price" style="color: #10B981;">$15 – $59 USD/mes</div>
+                            <div class="bench-notes">IA generativa nativa, entregabilidad certificada y coste variable marginal para máxima rentabilidad.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Billing Toggle -->
+                <div class="pricing-toggle-wrap">
+                    <span class="toggle-label" id="lbl-monthly">Facturación Mensual</span>
+                    <label class="switch">
+                        <input type="checkbox" id="pricing-billing-switch" checked>
+                        <span class="slider round"></span>
+                    </label>
+                    <span class="toggle-label active" id="lbl-annual">Facturación Anual <span class="badge-discount">Ahorro –20%</span></span>
+                </div>
+
+                <!-- 4 Pricing Cards Grid -->
+                <div class="pricing-grid">
+                    <!-- Plan 1: Free -->
+                    <div class="pricing-card">
+                        <div class="plan-header">
+                            <span class="plan-type">Puerta de Entrada</span>
+                            <h3 class="plan-name">Free</h3>
+                            <p class="plan-subtitle">Para probar el producto en serio y nutrir el embudo de conversión a pago.</p>
+                        </div>
+
+                        <div class="plan-price-box">
+                            <div class="price-currency">$</div>
+                            <div class="price-number" data-monthly="0" data-annual="0">0</div>
+                            <div class="price-period">USD / mes<br><small class="billing-note">sin tarjeta de crédito</small></div>
+                        </div>
+
+                        <div class="plan-features">
+                            <div class="feat-heading">Límites incluidos:</div>
+                            <ul>
+                                <li><strong>1 usuario</strong></li>
+                                <li>Hasta <strong>300 contactos</strong> almacenados</li>
+                                <li>Hasta <strong>500 correos</strong> enviados / mes</li>
+                                <li>1 campaña activa simultánea</li>
+                                <li>2 categorías de clientes</li>
+                                <li>30 mensajes de chat IA / mes</li>
+                                <li>3 plantillas guardadas</li>
+                                <li>50 MB almacenamiento de imágenes</li>
+                                <li>Métricas globales (aperturas y clics)</li>
+                                <li>Pie de página <em>"Enviado con Mail-IA"</em></li>
+                            </ul>
+                        </div>
+
+                        <div class="plan-footer">
+                            <div class="plan-margin-tag">Funnel de Adquisición B2B</div>
+                        </div>
+                    </div>
+
+                    <!-- Plan 2: Starter Pro -->
+                    <div class="pricing-card">
+                        <div class="plan-header">
+                            <span class="plan-type">Freelancers & Negocios</span>
+                            <h3 class="plan-name">Starter Pro</h3>
+                            <p class="plan-subtitle">Para consultores y pequeños negocios con envíos de campañas ocasionales.</p>
+                        </div>
+
+                        <div class="plan-price-box">
+                            <div class="price-currency">$</div>
+                            <div class="price-number" data-monthly="19" data-annual="15">15</div>
+                            <div class="price-period">USD / mes<br><small class="billing-note" id="note-starter">facturado anual ($180/año)</small></div>
+                        </div>
+
+                        <div class="plan-features">
+                            <div class="feat-heading">Límites incluidos:</div>
+                            <ul>
+                                <li><strong>1 usuario</strong></li>
+                                <li>Hasta <strong>2,500 contactos</strong> almacenados</li>
+                                <li>Hasta <strong>5,000 correos</strong> enviados / mes</li>
+                                <li>3 campañas activas simultáneas</li>
+                                <li>Hasta 5 categorías de clientes</li>
+                                <li><strong>200 mensajes de chat IA</strong> / mes</li>
+                                <li>Plantillas guardadas <strong>ilimitadas</strong></li>
+                                <li>500 MB almacenamiento de imágenes</li>
+                                <li>Seguimiento básico (aperturas, clics, rebotes)</li>
+                                <li>Soporte por email (respuesta en 48h)</li>
+                            </ul>
+                        </div>
+
+                        <div class="plan-footer">
+                            <div class="plan-margin-tag">Margen bruto est.: >85%</div>
+                        </div>
+                    </div>
+
+                    <!-- Plan 3: Business Team (Featured) -->
+                    <div class="pricing-card featured-plan">
+                        <div class="popular-ribbon">Más Popular en Equipos</div>
+                        <div class="plan-header">
+                            <span class="plan-type">Equipos de Marketing</span>
+                            <h3 class="plan-name">Business Team</h3>
+                            <p class="plan-subtitle">Para equipos de marketing con envíos regulares y necesidad de colaborar.</p>
+                        </div>
+
+                        <div class="plan-price-box">
+                            <div class="price-currency">$</div>
+                            <div class="price-number" data-monthly="59" data-annual="47">47</div>
+                            <div class="price-period">USD / mes<br><small class="billing-note" id="note-business">facturado anual ($564/año)</small></div>
+                        </div>
+
+                        <div class="plan-features">
+                            <div class="feat-heading">Todo lo de Starter Pro, más:</div>
+                            <ul>
+                                <li><strong>Hasta 5 usuarios</strong> con roles</li>
+                                <li>Hasta <strong>15,000 contactos</strong> almacenados</li>
+                                <li>Hasta <strong>50,000 correos</strong> enviados / mes</li>
+                                <li>Campañas y categorías <strong>ilimitadas</strong></li>
+                                <li><strong>1,500 mensajes de chat IA</strong> / mes</li>
+                                <li>5 GB almacenamiento de imágenes</li>
+                                <li><strong>Seguimiento avanzado</strong> (mapa de calor, exportación CSV/PDF, comparativas)</li>
+                                <li>Subdominio propio verificado (alta entregabilidad)</li>
+                                <li>Soporte por chat en vivo (respuesta en 24h)</li>
+                            </ul>
+                        </div>
+
+                        <div class="plan-footer">
+                            <div class="plan-margin-tag highlight">Mayor LTV y demanda comercial</div>
+                        </div>
+                    </div>
+
+                    <!-- Plan 4: Enterprise Custom -->
+                    <div class="pricing-card">
+                        <div class="plan-header">
+                            <span class="plan-type">Grandes Empresas</span>
+                            <h3 class="plan-name">Enterprise Custom</h3>
+                            <p class="plan-subtitle">Para empresas con alto volumen, cumplimiento estricto o integración a medida.</p>
+                        </div>
+
+                        <div class="plan-price-box">
+                            <div class="price-currency" style="font-size: 1rem; color: var(--text-muted);">Desde</div>
+                            <div class="price-number" data-monthly="199" data-annual="199">199</div>
+                            <div class="price-period">USD / mes<br><small class="billing-note">a medida según volumen</small></div>
+                        </div>
+
+                        <div class="plan-features">
+                            <div class="feat-heading">Todo lo de Business, más:</div>
+                            <ul>
+                                <li><strong>Usuarios y contactos ilimitados</strong></li>
+                                <li>Volumen negociado (>50,000 en Amazon SES)</li>
+                                <li>Chat IA negociable / sin límite práctico</li>
+                                <li>Almacenamiento en Cloudflare R2 a medida</li>
+                                <li>IP dedicada + acompañamiento warmup</li>
+                                <li><strong>API completa, webhooks y SSO</strong></li>
+                                <li>Acuerdo de Nivel de Servicio (SLA formal)</li>
+                                <li>Onboarding dedicado + gestor de cuenta</li>
+                            </ul>
+                        </div>
+
+                        <div class="plan-footer">
+                            <div class="plan-margin-tag">Contratos Anuales B2B</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Revenue Simulator Calculator for Partners -->
+                <div class="calculator-box">
+                    <div class="calc-header">
+                        <span class="calc-badge">Simulador de Ingresos para Socios</span>
+                        <h4 class="calc-title">Calculadora de Proyección de Ingresos Recurrentes (MRR / ARR)</h4>
+                        <p class="calc-desc">Modela la composición de la base de clientes y la conversión del embudo para proyectar los beneficios operativos del proyecto.</p>
+                    </div>
+
+                    <div class="calc-body">
+                        <div class="calc-controls">
+                            <!-- Preset Scenarios -->
+                            <div style="display: flex; gap: 0.5rem; margin-bottom: 1.25rem;">
+                                <button class="btn btn-secondary btn-sm" id="btn-scenario-conservative" style="font-size: 0.75rem; padding: 4px 10px;">Escenario Conservador</button>
+                                <button class="btn btn-secondary btn-sm" id="btn-scenario-optimistic" style="font-size: 0.75rem; padding: 4px 10px;">Escenario Escala</button>
+                            </div>
+
+                            <div class="slider-group">
+                                <div class="slider-label-row">
+                                    <label for="range-starter">Clientes Starter Pro ($19 USD/mes):</label>
+                                    <span class="slider-val" id="val-starter">35</span>
+                                </div>
+                                <input type="range" id="range-starter" min="0" max="250" step="5" value="35">
+                            </div>
+
+                            <div class="slider-group" style="margin-top: 1rem;">
+                                <div class="slider-label-row">
+                                    <label for="range-business">Clientes Business Team ($59 USD/mes):</label>
+                                    <span class="slider-val" id="val-business">20</span>
+                                </div>
+                                <input type="range" id="range-business" min="0" max="150" step="2" value="20">
+                            </div>
+
+                            <div class="slider-group" style="margin-top: 1rem;">
+                                <div class="slider-label-row">
+                                    <label for="range-enterprise">Clientes Enterprise ($199 USD/mes):</label>
+                                    <span class="slider-val" id="val-enterprise">3</span>
+                                </div>
+                                <input type="range" id="range-enterprise" min="0" max="20" step="1" value="3">
+                            </div>
+
+                            <div class="slider-group" style="margin-top: 1rem;">
+                                <div class="slider-label-row">
+                                    <label for="range-free" style="color: var(--text-dim);">Usuarios Free en Funnel (Conversión ~5%):</label>
+                                    <span class="slider-val" id="val-free" style="color: var(--text-muted);">500</span>
+                                </div>
+                                <input type="range" id="range-free" min="50" max="2000" step="50" value="500">
+                            </div>
+                        </div>
+
+                        <div class="calc-results-grid">
+                            <div class="calc-res-card">
+                                <span class="res-label">Ingreso Mensual (MRR)</span>
+                                <span class="res-number" id="calc-mrr">$2,442 USD</span>
+                                <span class="res-sub" id="calc-paying-count">58 empresas pagando</span>
+                            </div>
+                            <div class="calc-res-card">
+                                <span class="res-label">Ingreso Anualizado (ARR)</span>
+                                <span class="res-number" id="calc-arr">$29,304 USD</span>
+                                <span class="res-sub">Facturación recurrente anual</span>
+                            </div>
+                            <div class="calc-res-card">
+                                <span class="res-label">Beneficio Bruto Mensual Est.</span>
+                                <span class="res-number highlight-green" id="calc-profit">$2,210 USD</span>
+                                <span class="res-sub">Margen neto operativo ~90%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN: RESUMEN DE OPORTUNIDAD (Diseñada según @.idea/agent.md) -->
+        <section class="section-block section-alt" id="resumen">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-kicker">CONCLUSIONES ESTRATÉGICAS & HOJA DE RUTA</span>
+                    <h2 class="section-title">Resumen de Oportunidad para Socios</h2>
+                    <p class="section-subtitle">
+                        Una propuesta tecnológica de alta eficiencia con ventajas competitivas reales, gobernanza clara para los socios y un plan de acción inmediato para llevar el producto a producción.
+                    </p>
+                </div>
+
+                <!-- 3 Pillars of Opportunity -->
+                <div class="summary-final-grid">
+                    <div class="summary-card">
+                        <div class="summary-icon">⚡</div>
+                        <h4>Ventaja Competitiva Real</h4>
+                        <p>No competimos con editores visuales tradicionales de arrastrar y soltar: ofrecemos una experiencia conversacional fluida tipo Claude que genera código HTML estructurado y despacha correos masivos con certificación anti-spam (SPF/DKIM/DMARC) mediante workers desacoplados.</p>
+                    </div>
+
+                    <div class="summary-card">
+                        <div class="summary-icon">📈</div>
+                        <h4>Márgenes Operativos >85%</h4>
+                        <p>Infraestructura serverless con coste base mensual mínimo ($6 – $55 USD global) e inferencia IA a céntimos por millón de tokens en Groq/OpenRouter, blindando la rentabilidad neta por cada cliente de pago desde el primer día.</p>
+                    </div>
+
+                    <div class="summary-card">
+                        <div class="summary-icon">🤝</div>
+                        <h4>Gobernanza & Retorno para el Socio</h4>
+                        <p>Participación directa y transparente sobre los beneficios operativos mensuales de las suscripciones SaaS recurrentes (MRR / ARR), con acceso a telemetría financiera en tiempo real y voz en las decisiones clave de producto y expansión.</p>
+                    </div>
+                </div>
+
+                <!-- Executive Next-Steps Call to Action Banner -->
+                <div class="next-steps-banner">
+                    <div class="banner-content">
+                        <h3>¿Preparado para avanzar con la mesa de trabajo?</h3>
+                        <p>Descarga la normativa técnica completa (<code>rules.md</code>) o revisa la estructura de presupuesto y precios para coordinar el inicio de la ejecución.</p>
+                    </div>
+                    <div class="banner-actions">
+                        <button class="btn btn-secondary" onclick="document.getElementById('btn-markdown').click()">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                            Descargar rules.md
+                        </button>
+                        <a href="#presupuesto" class="btn btn-primary">Revisar Presupuesto</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+
+    <!-- Executive Footer -->
+    <footer class="executive-footer">
+        <div class="container footer-content">
+            <div class="footer-left">
+                <div class="brand-name">MAIL-IA</div>
+                <p>Documento estratégico para socios y aliados. Confidencial y reservado.</p>
+            </div>
+            <div class="footer-right">
+                <div class="footer-links">
+                    <a href="#vision">Visión</a>
+                    <a href="#modulos">Módulos</a>
+                    <a href="#stack">Stack</a>
+                    <a href="#presupuesto">Presupuesto</a>
+                    <a href="#cronograma">Cronograma</a>
+                    <a href="#precios">Precios</a>
+                    <a href="#resumen">Oportunidad</a>
+                </div>
+                <div class="footer-copy">© 2026 MAIL-IA Technologies. Todos los derechos reservados.</div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="app.js"></script>
+</body>
+</html>
