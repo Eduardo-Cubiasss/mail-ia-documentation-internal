@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initModuleSimulator();
     initPricingToggle();
     initRevenueCalculator();
-    initMarkdownDownload();
+    initExportContextModal();
     initMobileMenu();
 });
 
@@ -776,31 +776,238 @@ function initMobileMenu() {
 }
 
 /* ==========================================================================
-   MARKDOWN DOWNLOAD HANDLER (Directly connects to rules.md)
+   AI AGENTS CONTEXT & RULES EXPORT SYSTEM
    ========================================================================== */
 
-function initMarkdownDownload() {
-    const btnMarkdown = document.getElementById('btn-markdown');
-    if (!btnMarkdown) return;
+const documentCache = {
+    'rules.md': null,
+    'contexto_desarrollo.md': null,
+    'contexto_negocio.md': null
+};
 
-    btnMarkdown.addEventListener('click', async (e) => {
-        e.preventDefault();
-        try {
-            const res = await fetch('rules.md');
-            if (!res.ok) throw new Error('Network response not ok');
-            const markdownText = await res.text();
-            triggerFileDownload('rules.md', markdownText);
-        } catch (err) {
-            console.warn('Fallback direct download for rules.md:', err);
+let currentPreviewFile = 'rules.md';
+
+function initExportContextModal() {
+    const modal = document.getElementById('export-modal');
+    const openBtns = [
+        document.getElementById('btn-open-export-modal'),
+        document.getElementById('btn-banner-export-modal'),
+        document.getElementById('btn-markdown')
+    ].filter(Boolean);
+
+    const closeBtn = document.getElementById('modal-close-btn');
+    const closeFooterBtn = document.getElementById('modal-close-footer-btn');
+    const cardsView = document.getElementById('export-cards-view');
+    const previewPanel = document.getElementById('modal-preview-panel');
+    const previewBackBtn = document.getElementById('btn-preview-back');
+    const previewCopyBtn = document.getElementById('btn-preview-copy');
+    const previewDownloadBtn = document.getElementById('btn-preview-download');
+    const downloadAllBtn = document.getElementById('btn-download-all-docs');
+
+    if (!modal) return;
+
+    // Open Modal Handlers
+    openBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            openModal();
+        });
+    });
+
+    function openModal() {
+        modal.classList.add('open');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        showCardsView();
+    }
+
+    function closeModal() {
+        modal.classList.remove('open');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+    }
+
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+    if (closeFooterBtn) closeFooterBtn.addEventListener('click', closeModal);
+
+    // Click outside backdrop to close
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            closeModal();
+        }
+    });
+
+    // Keyboard ESC to close
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('open')) {
+            closeModal();
+        }
+    });
+
+    function showCardsView() {
+        if (cardsView) cardsView.style.display = 'grid';
+        if (previewPanel) previewPanel.style.display = 'none';
+    }
+
+    function showPreviewView() {
+        if (cardsView) cardsView.style.display = 'none';
+        if (previewPanel) previewPanel.style.display = 'flex';
+    }
+
+    if (previewBackBtn) {
+        previewBackBtn.addEventListener('click', showCardsView);
+    }
+
+    // Individual Action Listeners on Cards
+    document.querySelectorAll('.btn-doc-download').forEach(btn => {
+        btn.addEventListener('click', async (e) => {
+            e.preventDefault();
+            const filename = btn.getAttribute('data-file');
+            await handleFileDownload(filename);
+        });
+    });
+
+    document.querySelectorAll('.btn-doc-copy').forEach(btn => {
+        btn.addEventListener('click', async (e) => {
+            e.preventDefault();
+            const filename = btn.getAttribute('data-file');
+            await handleFileContentCopy(filename);
+        });
+    });
+
+    document.querySelectorAll('.btn-doc-preview').forEach(btn => {
+        btn.addEventListener('click', async (e) => {
+            e.preventDefault();
+            const filename = btn.getAttribute('data-file');
+            await handleFilePreview(filename);
+        });
+    });
+
+    // Preview Toolbar Actions
+    if (previewCopyBtn) {
+        previewCopyBtn.addEventListener('click', async () => {
+            await handleFileContentCopy(currentPreviewFile);
+        });
+    }
+
+    if (previewDownloadBtn) {
+        previewDownloadBtn.addEventListener('click', async () => {
+            await handleFileDownload(currentPreviewFile);
+        });
+    }
+
+    // Download All Documents Button
+    if (downloadAllBtn) {
+        downloadAllBtn.addEventListener('click', async (e) => {
+            e.preventDefault();
+            const files = ['rules.md', 'contexto_desarrollo.md', 'contexto_negocio.md'];
+            showToast('Iniciando descarga de los 3 documentos...', '⬇');
+            for (let i = 0; i < files.length; i++) {
+                await handleFileDownload(files[i], false);
+                await new Promise(r => setTimeout(r, 350));
+            }
+            showToast('✓ 3 documentos descargados con éxito', '✓');
+        });
+    }
+}
+
+async function loadDocumentContent(filename) {
+    if (documentCache[filename]) {
+        return documentCache[filename];
+    }
+
+    try {
+        const response = await fetch(filename);
+        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+        const text = await response.text();
+        documentCache[filename] = text;
+        return text;
+    } catch (err) {
+        console.warn(`Could not fetch ${filename} via network:`, err);
+        return null;
+    }
+}
+
+async function handleFileDownload(filename, showNotification = true) {
+    try {
+        const content = await loadDocumentContent(filename);
+        if (content) {
+            triggerFileDownload(filename, content);
+            if (showNotification) showToast(`Descargando ${filename}`, '⬇');
+        } else {
+            // Direct anchor fallback
             const downloadAnchor = document.createElement('a');
-            downloadAnchor.href = 'rules.md';
-            downloadAnchor.download = 'rules.md';
+            downloadAnchor.href = filename;
+            downloadAnchor.download = filename;
             downloadAnchor.target = '_blank';
             document.body.appendChild(downloadAnchor);
             downloadAnchor.click();
             document.body.removeChild(downloadAnchor);
+            if (showNotification) showToast(`Descargando ${filename}`, '⬇');
         }
-    });
+    } catch (err) {
+        console.error(`Error downloading ${filename}:`, err);
+        showToast(`Error al descargar ${filename}`, '✕');
+    }
+}
+
+async function handleFileContentCopy(filename) {
+    try {
+        let content = await loadDocumentContent(filename);
+        if (!content) {
+            const res = await fetch(filename);
+            content = await res.text();
+            documentCache[filename] = content;
+        }
+        await navigator.clipboard.writeText(content);
+        showToast(`✓ Contenido de ${filename} copiado al portapapeles`, '📋');
+    } catch (err) {
+        console.error(`Error copying ${filename}:`, err);
+        try {
+            const content = documentCache[filename] || '';
+            const tempTextArea = document.createElement('textarea');
+            tempTextArea.value = content;
+            tempTextArea.style.position = 'fixed';
+            tempTextArea.style.left = '-9999px';
+            document.body.appendChild(tempTextArea);
+            tempTextArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempTextArea);
+            showToast(`✓ Contenido de ${filename} copiado`, '📋');
+        } catch (copyErr) {
+            showToast(`No se pudo copiar automáticamente`, '✕');
+        }
+    }
+}
+
+async function handleFilePreview(filename) {
+    currentPreviewFile = filename;
+    const badge = document.getElementById('preview-filename-badge');
+    const codeBlock = document.getElementById('preview-code-block');
+    const cardsView = document.getElementById('export-cards-view');
+    const previewPanel = document.getElementById('modal-preview-panel');
+
+    if (badge) badge.textContent = filename;
+    if (codeBlock) codeBlock.textContent = `Cargando ${filename}...`;
+
+    if (cardsView) cardsView.style.display = 'none';
+    if (previewPanel) previewPanel.style.display = 'flex';
+
+    try {
+        const content = await loadDocumentContent(filename);
+        if (content && codeBlock) {
+            codeBlock.textContent = content;
+        } else if (codeBlock) {
+            const res = await fetch(filename);
+            const text = await res.text();
+            documentCache[filename] = text;
+            codeBlock.textContent = text;
+        }
+    } catch (err) {
+        if (codeBlock) {
+            codeBlock.textContent = `No se pudo previsualizar ${filename} en este visor. Puedes descargarlo directamente con el botón de descarga.`;
+        }
+    }
 }
 
 function triggerFileDownload(filename, textContent) {
@@ -813,4 +1020,23 @@ function triggerFileDownload(filename, textContent) {
     link.click();
     document.body.removeChild(link);
     URL.revokeObjectURL(blobUrl);
+}
+
+let toastTimeout = null;
+function showToast(message, icon = '✓') {
+    const toast = document.getElementById('toast-notification');
+    const msgEl = document.getElementById('toast-message');
+    const iconEl = toast ? toast.querySelector('.toast-icon') : null;
+
+    if (!toast || !msgEl) return;
+
+    msgEl.textContent = message;
+    if (iconEl) iconEl.textContent = icon;
+
+    toast.classList.add('show');
+
+    if (toastTimeout) clearTimeout(toastTimeout);
+    toastTimeout = setTimeout(() => {
+        toast.classList.remove('show');
+    }, 2800);
 }
