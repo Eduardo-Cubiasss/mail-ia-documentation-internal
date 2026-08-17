@@ -146,6 +146,17 @@ El plan de trabajo está estructurado en 4 etapas quincenales orientadas a resul
 * **Fase 4 (Día 46 a 60): Telemetría & Despliegue de Beta Privada**
   * Panel de análisis de aperturas y clics, y lanzamiento de la fase piloto con 15 empresas clientes iniciales.
 
+### 6.1 Plan Fast-Track: Versión Beta Splash (21 Días / 3 Semanas)
+
+Para acelerar la salida a mercado y captar los primeros 10 clientes piloto de inmediato, se establece una variante de lanzamiento rápido enfocada exclusivamente en el **núcleo de alto impacto**:
+
+* **Semana 1 (Día 1 a 7): Asistente Conversacional & Live Preview**
+  * Interfaz de chat guiado con generación instantánea de plantillas de correo responsivas y ajustes de tono en caliente.
+* **Semana 2 (Día 8 a 14): Carga Rápida de Audiencias & Despacho Automático**
+  * Importador de contactos CSV (hasta 5,000 destinatarios) y motor de despacho desacoplado de alta entregabilidad.
+* **Semana 3 (Día 15 a 21): Métricas Flash & Onboarding de 10 Empresas Piloto**
+  * Panel de métricas esenciales (enviados, aperturas, clics) y puesta en marcha comercial con clientes iniciales.
+
 ---
 
 ## 7. Directrices de Comportamiento para el Agente IA de Negocio

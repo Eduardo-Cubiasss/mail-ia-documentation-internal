@@ -27,15 +27,112 @@
                 </div>
             </div>
 
-            <!-- Proposed Menu Navigation (Clean without numbers) -->
+            <!-- Categorized Executive Dropdown Navigation Menu -->
             <nav class="nav-menu" id="nav-menu">
-                <a href="#vision" class="nav-link active">Visión & Problema</a>
-                <a href="#modulos" class="nav-link">Módulos & UI Mockup</a>
-                <a href="#stack" class="nav-link">Stack Tecnológico</a>
-                <a href="#presupuesto" class="nav-link">Presupuesto</a>
-                <a href="#cronograma" class="nav-link">Cronograma</a>
-                <a href="#precios" class="nav-link">Suscripciones & Precios</a>
-                <a href="#resumen" class="nav-link">Oportunidad</a>
+                <!-- Dropdown Category 1: Estrategia & UI -->
+                <div class="nav-item-dropdown" data-dropdown="estrategia">
+                    <button class="nav-dropdown-trigger" type="button" aria-expanded="false" aria-haspopup="true">
+                        <span>Estrategia & UI</span>
+                        <svg class="nav-dropdown-arrow" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-dropdown-menu">
+                        <a href="#vision" class="dropdown-item">
+                            <span class="dropdown-item-bullet"></span>
+                            <div class="dropdown-item-content">
+                                <span class="dropdown-item-title">Visión & Problema</span>
+                                <span class="dropdown-item-desc">Dolor de mercado y propuesta de valor</span>
+                            </div>
+                        </a>
+                        <a href="#modulos" class="dropdown-item">
+                            <span class="dropdown-item-bullet"></span>
+                            <div class="dropdown-item-content">
+                                <span class="dropdown-item-title">Módulos & UI Mockup</span>
+                                <span class="dropdown-item-desc">Simulador interactivo de 8 pantallas</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="nav-group-divider"></div>
+
+                <!-- Dropdown Category 2: Ingeniería & Costes -->
+                <div class="nav-item-dropdown" data-dropdown="ingenieria">
+                    <button class="nav-dropdown-trigger" type="button" aria-expanded="false" aria-haspopup="true">
+                        <span>Ingeniería & Costes</span>
+                        <svg class="nav-dropdown-arrow" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-dropdown-menu">
+                        <a href="#stack" class="dropdown-item">
+                            <span class="dropdown-item-bullet"></span>
+                            <div class="dropdown-item-content">
+                                <span class="dropdown-item-title">Stack Tecnológico</span>
+                                <span class="dropdown-item-desc">Clean Architecture, NestJS & Angular</span>
+                            </div>
+                        </a>
+                        <a href="#presupuesto" class="dropdown-item">
+                            <span class="dropdown-item-bullet"></span>
+                            <div class="dropdown-item-content">
+                                <span class="dropdown-item-title">Presupuesto Infraestructura</span>
+                                <span class="dropdown-item-desc">Costes mínimos escalables ($6 - $55/mes)</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="nav-group-divider"></div>
+
+                <!-- Dropdown Category 3: Planificación & Roadmap -->
+                <div class="nav-item-dropdown" data-dropdown="planificacion">
+                    <button class="nav-dropdown-trigger" type="button" aria-expanded="false" aria-haspopup="true">
+                        <span>Planificación & Roadmap</span>
+                        <svg class="nav-dropdown-arrow" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-dropdown-menu">
+                        <a href="#cronograma" class="dropdown-item">
+                            <span class="dropdown-item-bullet"></span>
+                            <div class="dropdown-item-content">
+                                <span class="dropdown-item-title">Cronograma General (60D)</span>
+                                <span class="dropdown-item-desc">Roadmap completo por pantallas en 4 fases</span>
+                            </div>
+                        </a>
+                        <a href="#cronograma-beta" class="dropdown-item highlight-item">
+                            <span class="dropdown-item-bullet beta-bullet"></span>
+                            <div class="dropdown-item-content">
+                                <div class="dropdown-item-title-row">
+                                    <span class="dropdown-item-title">Versión Beta Splash</span>
+                                    <span class="dropdown-badge-fast">Fast-Track 21D</span>
+                                </div>
+                                <span class="dropdown-item-desc">Lanzamiento ágil con módulos esenciales</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="nav-group-divider"></div>
+
+                <!-- Dropdown Category 4: Negocio & Retorno -->
+                <div class="nav-item-dropdown" data-dropdown="negocio">
+                    <button class="nav-dropdown-trigger" type="button" aria-expanded="false" aria-haspopup="true">
+                        <span>Negocio & Retorno</span>
+                        <svg class="nav-dropdown-arrow" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="nav-dropdown-menu">
+                        <a href="#precios" class="dropdown-item">
+                            <span class="dropdown-item-bullet"></span>
+                            <div class="dropdown-item-content">
+                                <span class="dropdown-item-title">Suscripciones & Precios</span>
+                                <span class="dropdown-item-desc">Estructura comercial y calculadora</span>
+                            </div>
+                        </a>
+                        <a href="#resumen" class="dropdown-item">
+                            <span class="dropdown-item-bullet"></span>
+                            <div class="dropdown-item-content">
+                                <span class="dropdown-item-title">Oportunidad & Resumen</span>
+                                <span class="dropdown-item-desc">Dossier estratégico y próximos pasos</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
             </nav>
 
             <div class="header-actions">
@@ -750,6 +847,248 @@
             </div>
         </section>
 
+        <!-- SECCIÓN: CRONOGRAMA VERSIÓN BETA SPLASH (FAST-TRACK 21 DÍAS) -->
+        <section class="section-block" id="cronograma-beta">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-kicker">FAST-TRACK ROADMAP • ALCANCE ESENCIAL (21 DÍAS / 3 SEMANAS)</span>
+                    <h2 class="section-title">Cronograma para Versión Beta Splash</h2>
+                    <p class="section-subtitle">
+                        Estrategia de lanzamiento acelerado solicitada por dirección: priorización exclusiva de los módulos de mayor impacto para deslumbrar a los primeros clientes piloto, reducir el time-to-market en un 65% y validar la tracción comercial de inmediato.
+                    </p>
+                </div>
+
+                <!-- Executive Strategic Callout Banner -->
+                <div class="beta-splash-callout">
+                    <div class="beta-callout-icon">⚡</div>
+                    <div class="beta-callout-content" style="width: 100%;">
+                        <h3>Directriz Ejecutiva: Enfoque de Lanzamiento "Beta Splash"</h3>
+                        <p>
+                            Para acelerar la salida al mercado y validar la aceptación de clientes reales sin demoras innecesarias, la versión Beta Splash concentra los esfuerzos en los <strong>3 componentes clave que generan el efecto de alto impacto</strong>: la maquetación conversacional con IA, la gestión de contactos y el motor de despacho seguro por colas desacopladas.
+                        </p>
+                        <div class="beta-callout-pillars">
+                            <div class="beta-pillar-item">
+                                <span class="beta-pillar-dot"></span>
+                                <div class="beta-pillar-text">
+                                    <strong>Time-to-Market de 21 Días</strong>
+                                    <span>Recorte del 65% en tiempo de entrega para capturar retroalimentación y tracción comercial inmediata.</span>
+                                </div>
+                            </div>
+                            <div class="beta-pillar-item">
+                                <span class="beta-pillar-dot"></span>
+                                <div class="beta-pillar-text">
+                                    <strong>Foco 100% en el Core IA</strong>
+                                    <span>Chat generativo con vista previa HTML en tiempo real, importador CSV y envío desacoplado sin bloqueos.</span>
+                                </div>
+                            </div>
+                            <div class="beta-pillar-item">
+                                <span class="beta-pillar-dot"></span>
+                                <div class="beta-pillar-text">
+                                    <strong>Validación Temprana (10 Clientes)</strong>
+                                    <span>Infraestructura ligera y activación cerrada con menos de 10 clientes piloto seleccionadas.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fast-Track Timeline Grid (3 Sprints / 21 Days) -->
+                <div class="timeline-container-3col">
+                    
+                    <!-- Semana 1: Core IA & Generación en Vivo -->
+                    <div class="timeline-card-beta">
+                        <div class="timeline-header">
+                            <span class="phase-badge">Semana 1 (Días 1-7)</span>
+                            <span class="pct-badge">33%</span>
+                        </div>
+                        <div class="timeline-progress-bar-wrap">
+                            <div class="timeline-progress-fill" style="width: 33%;"></div>
+                        </div>
+                        
+                        <div class="screen-badge-list">
+                            <span class="screen-tag">Chat Conversacional IA</span>
+                            <span class="screen-tag">Live HTML Preview</span>
+                            <span class="screen-tag">Auth Básica</span>
+                        </div>
+
+                        <h3 class="timeline-title">Núcleo de Generación Conversacional</h3>
+                        <p class="timeline-desc">Construcción del motor de inferencia con IA y la interfaz de chat en split-screen para redacción y maquetación visual en tiempo real.</p>
+                        
+                        <div class="deliverables-box">
+                            <span class="deliv-label">Entregables indispensables:</span>
+                            <ul>
+                                <li><strong>Pantalla Chat IA (Split-Screen):</strong> Editor conversacional con generación de plantillas HTML responsivas en &lt; 4 seg.</li>
+                                <li><strong>Chips de Ajuste Rápido:</strong> Modificación instantánea de tono (Formal, Venta directa, Urgente, Botón CTA).</li>
+                                <li><strong>Backend NestJS Core:</strong> API modular conectada a Groq/OpenRouter y base de datos Neon PostgreSQL.</li>
+                                <li><strong>Autenticación Básica:</strong> Login seguro con JWT/Tokens para acceso de usuarios piloto.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Semana 2: Audiencias Rápidas & Despacho Asíncrono -->
+                    <div class="timeline-card-beta">
+                        <div class="timeline-header">
+                            <span class="phase-badge">Semana 2 (Días 8-14)</span>
+                            <span class="pct-badge">66%</span>
+                        </div>
+                        <div class="timeline-progress-bar-wrap">
+                            <div class="timeline-progress-fill" style="width: 66%;"></div>
+                        </div>
+
+                        <div class="screen-badge-list">
+                            <span class="screen-tag">Importador CSV</span>
+                            <span class="screen-tag">Configuración de Envío</span>
+                            <span class="screen-tag">Workers BullMQ</span>
+                        </div>
+
+                        <h3 class="timeline-title">Gestión de Listas & Motor de Envío</h3>
+                        <p class="timeline-desc">Habilitación de la carga masiva de contactos y la arquitectura de despacho desacoplada con alta entregabilidad anti-spam.</p>
+                        
+                        <div class="deliverables-box">
+                            <span class="deliv-label">Entregables indispensables:</span>
+                            <ul>
+                                <li><strong>Pantalla Clientes / Listas:</strong> Carga rápida de archivos CSV (hasta 5,000 contactos) y mapeo automático de campos.</li>
+                                <li><strong>Flujo Simplificado de Envío:</strong> Selección de audiencia, revisión del email generado y disparo inmediato en 2 clics.</li>
+                                <li><strong>Colas BullMQ + Redis:</strong> Despacho en segundo plano desacoplado para evitar sobrecargas de servidor.</li>
+                                <li><strong>Adaptador Resend / Postmark:</strong> Integración SMTP/API aislada bajo interfaz <code>EmailSender</code> con SPF y DKIM activos.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Semana 3: Telemetría Flash & Salida a Producción -->
+                    <div class="timeline-card-beta highlight-card">
+                        <div class="timeline-header">
+                            <span class="phase-badge">Semana 3 (Días 15-21)</span>
+                            <span class="pct-badge" style="color: #6EE7B7; border-color: rgba(16, 185, 129, 0.5);">100% Beta Ready 🚀</span>
+                        </div>
+                        <div class="timeline-progress-bar-wrap">
+                            <div class="timeline-progress-fill" style="width: 100%; background: #10B981;"></div>
+                        </div>
+
+                        <div class="screen-badge-list">
+                            <span class="screen-tag">QA Playwright</span>
+                            <span class="screen-tag">10 Clientes Piloto</span>
+                        </div>
+
+                        <h3 class="timeline-title">Telemetría Flash & Salida a Producción</h3>
+                        <p class="timeline-desc">Monitoreo de rendimiento en tiempo real, validación automatizada de flujos críticos y apertura a las primeras 10 empresas clientes.</p>
+                        
+                        <div class="deliverables-box">
+                            <span class="deliv-label">Entregables indispensables:</span>
+                            <ul>
+                                <li><strong>Testing Automatizado con Playwright:</strong> Suite E2E validando flujo: Prompt IA → Generación → Lista → Envío exitoso.</li>
+                                <li><strong>Despliegue en Producción:</strong> Frontend en Cloudflare Pages y Backend/Redis en Railway/Fly.io.</li>
+                                <li><strong>Onboarding de 10 Empresas Piloto:</strong> Acceso exclusivo para clientes iniciales y recopilación de métricas de retención.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Scope Matrix Table (Beta Splash vs. Full 60-Day Release) -->
+                <div class="beta-matrix-box">
+                    <div class="beta-matrix-header">
+                        <div>
+                            <h3 class="table-box-title" style="margin-bottom: 0.25rem;">Matriz de Alcance: Versión Beta Splash (21 Días) vs. Versión Completa (60 Días)</h3>
+                            <p style="font-size: 0.8rem; color: var(--text-muted);">Definición precisa de funcionalidades incluidas en el lanzamiento rápido frente a entregables de la versión 1.0 completa.</p>
+                        </div>
+                        <div style="display: flex; gap: 0.5rem;">
+                            <span class="scope-pill-core">🔥 Core Beta Splash</span>
+                            <span class="scope-pill-deferred">⏳ Versión 60D</span>
+                        </div>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="executive-table">
+                            <thead>
+                                <tr>
+                                    <th style="width: 25%;">Módulo / Capacidad</th>
+                                    <th style="width: 32%;">Versión Beta Splash (21 Días)</th>
+                                    <th style="width: 30%;">Versión Completa (60 Días)</th>
+                                    <th style="width: 13%;">Estado en Beta</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Creación Asistida por IA</strong></td>
+                                    <td>Conversación guiada con Groq/OpenRouter y generación estructurada JSON/HTML en segundos.</td>
+                                    <td>Modelos multi-proveedor personalizables y memoria de voz de marca persistente.</td>
+                                    <td><span class="scope-pill-core">🔥 Core Incluido</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Live Preview & Maquetación</strong></td>
+                                    <td>Visualizador HTML en tiempo real split-screen con chips rápidos de tono y botón CTA.</td>
+                                    <td>Simulador multidispositivo Desktop/Mobile/Dark Mode + Editor visual drag & drop.</td>
+                                    <td><span class="scope-pill-core">🔥 Core Incluido</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Gestión de Audiencias</strong></td>
+                                    <td>Carga rápida de archivos CSV y listas de destinatarios básicas en Neon Postgres.</td>
+                                    <td>Segmentación predictiva con IA, filtros booleanos dinámicos y scoring de contactos.</td>
+                                    <td><span class="scope-pill-core">🔥 Core Incluido</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Motor de Despacho</strong></td>
+                                    <td>Envío desacoplado con colas BullMQ + Resend/Postmark y autenticación SPF/DKIM.</td>
+                                    <td>Envíos programados por zona horaria, reintentos automáticos avanzados y multi-dominio.</td>
+                                    <td><span class="scope-pill-core">🔥 Core Incluido</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Biblioteca de Plantillas</strong></td>
+                                    <td>Generación 100% dinámica mediante el asistente de IA en el chat según necesidad.</td>
+                                    <td>Catálogo visual de 50+ plantillas guardadas organizadas por categorías y etiquetas.</td>
+                                    <td><span class="scope-pill-deferred">⏳ Versión 60D</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Telemetría & Métricas</strong></td>
+                                    <td>Dashboard Flash: conteo en vivo de correos enviados, tasa de aperturas y clics.</td>
+                                    <td>Mapas de calor de interacción, geolocalización, análisis de rebotes y exportación PDF/Excel.</td>
+                                    <td><span class="scope-pill-core">🔥 Core Incluido</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Acceso & Seguridad</strong></td>
+                                    <td>Autenticación segura por credenciales y tokens JWT para cuentas piloto.</td>
+                                    <td>SSO Corporativo (Google Workspace, Microsoft Entra ID) y roles granulares de equipo.</td>
+                                    <td><span class="scope-pill-core">🔥 Core Incluido</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Monetización & Suscripción</strong></td>
+                                    <td>Activación manual de 10 cuentas piloto cerradas (cobro directo / free beta de validación).</td>
+                                    <td>Pasarela de pagos Stripe automatizada con auto-upgrade y portal de cliente.</td>
+                                    <td><span class="scope-pill-deferred">⏳ Versión 60D</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Beta Validation KPIs Grid -->
+                <div class="beta-kpis-grid">
+                    <div class="beta-kpi-card">
+                        <div class="beta-kpi-val" style="color: #93C5FD;">&lt; 3.5 s</div>
+                        <div class="beta-kpi-lbl">Tiempo de Inferencia IA</div>
+                        <div class="beta-kpi-note">Generación de HTML responsivo</div>
+                    </div>
+                    <div class="beta-kpi-card">
+                        <div class="beta-kpi-val" style="color: #10B981;">&gt; 98.8%</div>
+                        <div class="beta-kpi-lbl">Tasa de Entregabilidad</div>
+                        <div class="beta-kpi-note">SPF, DKIM y DMARC activos</div>
+                    </div>
+                    <div class="beta-kpi-card">
+                        <div class="beta-kpi-val" style="color: #FDE047;">10 Empresas</div>
+                        <div class="beta-kpi-lbl">Piloto Comercial</div>
+                        <div class="beta-kpi-note">Validación de retención y NPS</div>
+                    </div>
+                    <div class="beta-kpi-card">
+                        <div class="beta-kpi-val" style="color: #A78BFA;">50,000</div>
+                        <div class="beta-kpi-lbl">Correos Procesados</div>
+                        <div class="beta-kpi-note">Capacidad inicial de clúster</div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
         <!-- SECCIÓN: PRECIOS & MONETIZACIÓN (Diseñada según @.idea/agent.md) -->
         <section class="section-block" id="precios">
             <div class="container">
@@ -1246,7 +1585,8 @@
                     <a href="#modulos">Módulos</a>
                     <a href="#stack">Stack</a>
                     <a href="#presupuesto">Presupuesto</a>
-                    <a href="#cronograma">Cronograma</a>
+                    <a href="#cronograma">Cronograma 60D</a>
+                    <a href="#cronograma-beta">Beta Splash</a>
                     <a href="#precios">Precios</a>
                     <a href="#resumen">Oportunidad</a>
                 </div>
