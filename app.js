@@ -34,19 +34,19 @@ const moduleData = {
         renderWireframe: () => `
             <!-- Campaigns History & Management Screen -->
             <div class="mockup-wireframe-card" style="margin-bottom: 0.65rem;">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.65rem;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.65rem; flex-wrap: wrap; gap: 0.4rem;">
                     <div>
                         <div style="font-size: 0.85rem; font-weight: 700; color: #FFFFFF;">Historial de Campañas</div>
                         <div style="font-size: 0.62rem; color: var(--text-muted);">8 campañas registradas • 48,200 correos enviados</div>
                     </div>
-                    <div style="display: flex; gap: 0.4rem;">
+                    <div style="display: flex; gap: 0.4rem; flex-wrap: wrap;">
                         <span style="font-size: 0.65rem; background: rgba(255,255,255,0.06); color: #cbd5e1; padding: 4px 8px; border-radius: 4px;">🔍 Buscar...</span>
                         <span style="font-size: 0.65rem; background: #5B7CFA; color: #FFFFFF; font-weight: 700; padding: 4px 10px; border-radius: 4px; cursor: pointer;">+ Nueva Campaña con IA</span>
                     </div>
                 </div>
 
                 <!-- Status Filter Pills -->
-                <div style="display: flex; gap: 0.35rem; margin-bottom: 0.75rem;">
+                <div style="display: flex; gap: 0.35rem; margin-bottom: 0.75rem; flex-wrap: wrap;">
                     <span style="font-size: 0.62rem; background: #FFFFFF; color: #000; font-weight: 700; padding: 2px 8px; border-radius: 4px;">Todas (8)</span>
                     <span style="font-size: 0.62rem; background: rgba(255,255,255,0.06); color: #cbd5e1; padding: 2px 8px; border-radius: 4px;">Enviadas (5)</span>
                     <span style="font-size: 0.62rem; background: rgba(255,255,255,0.06); color: #cbd5e1; padding: 2px 8px; border-radius: 4px;">Programadas (2)</span>
@@ -64,7 +64,7 @@ const moduleData = {
                                 <div class="wf-item-desc">Enviada hace 2 días • 4,200 destinatarios • Segmento: Clientes VIP</div>
                             </div>
                         </div>
-                        <div style="display: flex; align-items: center; gap: 0.6rem;">
+                        <div style="display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap;">
                             <div style="text-align: right;">
                                 <div style="font-size: 0.7rem; font-weight: 700; color: #10B981;">44.2% Apertura</div>
                                 <div style="font-size: 0.58rem; color: var(--text-dim);">18.4% Clics</div>
@@ -82,7 +82,7 @@ const moduleData = {
                                 <div class="wf-item-desc">Programada para Mañana 10:00 AM • 1,850 destinatarios</div>
                             </div>
                         </div>
-                        <div style="display: flex; align-items: center; gap: 0.6rem;">
+                        <div style="display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap;">
                             <span class="wf-tag" style="background: rgba(234,179,8,0.15); color: #FDE047;">Programada</span>
                         </div>
                     </div>
@@ -96,7 +96,7 @@ const moduleData = {
                                 <div class="wf-item-desc">Enviada hace 1 sem • 5,000 destinatarios</div>
                             </div>
                         </div>
-                        <div style="display: flex; align-items: center; gap: 0.6rem;">
+                        <div style="display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap;">
                             <div style="text-align: right;">
                                 <div style="font-size: 0.7rem; font-weight: 700; color: #93C5FD;">38.6% Apertura</div>
                                 <div style="font-size: 0.58rem; color: var(--text-dim);">12.1% Clics</div>
@@ -114,7 +114,7 @@ const moduleData = {
                                 <div class="wf-item-desc">Borrador generado por IA • 850 contactos previstos</div>
                             </div>
                         </div>
-                        <div style="display: flex; align-items: center; gap: 0.6rem;">
+                        <div style="display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap;">
                             <span class="wf-tag" style="color: var(--text-dim);">Borrador</span>
                             <span style="font-size: 0.62rem; color: #5B7CFA; cursor: pointer;">Editar en Chat IA →</span>
                         </div>
@@ -138,7 +138,7 @@ const moduleData = {
         showSidebar: true,
         renderWireframe: () => `
             <!-- Header & KPIs Row -->
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.6rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.6rem; flex-wrap: wrap; gap: 0.4rem;">
                 <div style="font-size: 0.78rem; font-weight: 700; color: #FFFFFF;">Hola, Carlos • <span style="font-size: 0.65rem; color: var(--text-muted); font-weight: normal;">15 Agosto 2026</span></div>
                 <span style="font-size: 0.65rem; background: #5B7CFA; color: #fff; font-weight: 600; padding: 3px 8px; border-radius: 4px;">+ Nueva campaña</span>
             </div>
@@ -213,9 +213,9 @@ const moduleData = {
         renderWireframe: () => `
             <!-- Real Simulated Email Templates Grid -->
             <div class="mockup-wireframe-card">
-                <div class="wireframe-header" style="margin-bottom: 0.6rem; padding-bottom: 0.4rem;">
+                <div class="wireframe-header" style="margin-bottom: 0.6rem; padding-bottom: 0.4rem; flex-wrap: wrap; gap: 0.4rem;">
                     <div class="wf-title">Biblioteca de Plantillas & Diseños Simulados</div>
-                    <div style="display: flex; gap: 0.35rem;">
+                    <div style="display: flex; gap: 0.35rem; flex-wrap: wrap;">
                         <span class="wf-tag">🔍 Buscar...</span>
                         <span class="wf-tag" style="background: #FFFFFF; color: #000; font-weight: 700;">+ Subir diseño propio</span>
                     </div>
@@ -232,7 +232,7 @@ const moduleData = {
                             <p style="font-size: 0.55rem; color: #8A93A6; margin-bottom: 4px;">Cupón exclusivo para clientes corporativos.</p>
                             <span style="display: inline-block; background: #5B7CFA; color: #fff; font-size: 0.55rem; font-weight: 700; padding: 2px 6px; border-radius: 3px;">Reclamar Descuento →</span>
                         </div>
-                        <div style="padding: 0.45rem; display: flex; justify-content: space-between; align-items: center; background: var(--bg-surface);">
+                        <div style="padding: 0.45rem; display: flex; justify-content: space-between; align-items: center; background: var(--bg-surface); flex-wrap: wrap; gap: 0.3rem;">
                             <div>
                                 <div style="font-size: 0.65rem; font-weight: 600; color: #FFFFFF;">Oferta Anual Promo</div>
                                 <div style="font-size: 0.55rem; color: var(--text-dim);">Tasa prom.: 44.8%</div>
@@ -255,7 +255,7 @@ const moduleData = {
                             </div>
                             <div style="font-size: 0.52rem; color: #93C5FD;">Leer artículo completo (3 min) ›</div>
                         </div>
-                        <div style="padding: 0.45rem; display: flex; justify-content: space-between; align-items: center; background: var(--bg-surface);">
+                        <div style="padding: 0.45rem; display: flex; justify-content: space-between; align-items: center; background: var(--bg-surface); flex-wrap: wrap; gap: 0.3rem;">
                             <div>
                                 <div style="font-size: 0.65rem; font-weight: 600; color: #FFFFFF;">Newsletter Tech</div>
                                 <div style="font-size: 0.55rem; color: var(--text-dim);">Editorial / Contenido</div>
@@ -273,7 +273,7 @@ const moduleData = {
                             <p style="font-size: 0.55rem; color: #8A93A6; margin-bottom: 4px;">Sincronización instantánea con Google Workspace.</p>
                             <span style="display: inline-block; background: #10B981; color: #000; font-size: 0.55rem; font-weight: 700; padding: 2px 6px; border-radius: 3px;">Ver Documentación</span>
                         </div>
-                        <div style="padding: 0.45rem; display: flex; justify-content: space-between; align-items: center; background: var(--bg-surface);">
+                        <div style="padding: 0.45rem; display: flex; justify-content: space-between; align-items: center; background: var(--bg-surface); flex-wrap: wrap; gap: 0.3rem;">
                             <div>
                                 <div style="font-size: 0.65rem; font-weight: 600; color: #FFFFFF;">Lanzamiento Producto</div>
                                 <div style="font-size: 0.55rem; color: var(--text-dim);">Transaccional / Avisos</div>
@@ -301,7 +301,7 @@ const moduleData = {
         showSidebar: true,
         renderWireframe: () => `
             <!-- Stepper Progress -->
-            <div style="display: flex; justify-content: space-between; background: var(--bg-base); border: 1px solid var(--border-subtle); padding: 0.45rem 0.75rem; border-radius: 6px; margin-bottom: 0.65rem; font-size: 0.65rem;">
+            <div style="display: flex; justify-content: space-between; background: var(--bg-base); border: 1px solid var(--border-subtle); padding: 0.45rem 0.75rem; border-radius: 6px; margin-bottom: 0.65rem; font-size: 0.65rem; flex-wrap: wrap; gap: 0.4rem;">
                 <span style="color: var(--text-dim);">1. Diseño ✓</span>
                 <span style="color: #5B7CFA; font-weight: 700;">2. Destinatarios (Actual)</span>
                 <span style="color: var(--text-dim);">3. Revisión & Envío</span>
@@ -317,7 +317,7 @@ const moduleData = {
                     </div>
 
                     <div style="font-size: 0.7rem; font-weight: 700; color: #FFFFFF; margin-bottom: 0.35rem;">Programación</div>
-                    <div style="font-size: 0.65rem; color: #cbd5e1; display: flex; gap: 0.75rem; margin-bottom: 0.5rem;">
+                    <div style="font-size: 0.65rem; color: #cbd5e1; display: flex; gap: 0.75rem; margin-bottom: 0.5rem; flex-wrap: wrap;">
                         <label><input type="radio" name="sched" checked> Enviar ahora</label>
                         <label><input type="radio" name="sched"> Programar fecha</label>
                     </div>
@@ -354,16 +354,16 @@ const moduleData = {
         renderWireframe: () => `
             <!-- Contacts Table & Categories View -->
             <div class="mockup-wireframe-card">
-                <div class="wireframe-header" style="margin-bottom: 0.45rem; padding-bottom: 0.3rem;">
+                <div class="wireframe-header" style="margin-bottom: 0.45rem; padding-bottom: 0.3rem; flex-wrap: wrap; gap: 0.4rem;">
                     <div class="wf-title">Clientes & Audiencias (8,420 contactos)</div>
-                    <div style="display: flex; gap: 0.35rem;">
+                    <div style="display: flex; gap: 0.35rem; flex-wrap: wrap;">
                         <span class="wf-tag">📥 Importar CSV</span>
                         <span class="wf-tag" style="background: #FFFFFF; color: #000; font-weight: 700;">+ Añadir cliente</span>
                     </div>
                 </div>
 
                 <!-- Categories chips -->
-                <div style="display: flex; gap: 0.35rem; margin-bottom: 0.5rem;">
+                <div style="display: flex; gap: 0.35rem; margin-bottom: 0.5rem; flex-wrap: wrap;">
                     <span style="font-size: 0.6rem; background: rgba(91,124,250,0.15); color: #93C5FD; padding: 2px 7px; border-radius: 4px;">● Clientes VIP (1,240)</span>
                     <span style="font-size: 0.6rem; background: rgba(16,185,129,0.15); color: #6EE7B7; padding: 2px 7px; border-radius: 4px;">● Leads Calificados (3,180)</span>
                     <span style="font-size: 0.6rem; background: rgba(234,179,8,0.15); color: #FDE047; padding: 2px 7px; border-radius: 4px;">● Despacho Legal (850)</span>
@@ -409,7 +409,7 @@ const moduleData = {
         showSidebar: true,
         renderWireframe: () => `
             <!-- Analytics Campaign Detail View -->
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 0.4rem;">
                 <div style="font-size: 0.75rem; font-weight: 700; color: #FFFFFF;">Campaña: Oferta Anual 2026 • <span style="font-size: 0.62rem; color: #10B981;">Enviada</span></div>
                 <span style="font-size: 0.62rem; background: rgba(255,255,255,0.08); padding: 2px 6px; border-radius: 3px;">Duplicar campaña</span>
             </div>
